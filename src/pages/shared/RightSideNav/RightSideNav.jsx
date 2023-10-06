@@ -23,7 +23,7 @@ const RightSideNav = () => {
         <a href="" className='font-medium text-lg flex items-center gap-2 border border-gray-600 rounded-b-lg px-6 py-4'><FaInstagram></FaInstagram>Instagram</a>
       </div>
       {/* Q zone section  */}
-      <div className="px-6 py-10 mt-4 bg-gray-300 rounded-sm">
+      <div className="px-6 py-10 mt-4 bg-gray-300 rounded-lg">
         <h2 className="font-bold text-3xl mb-8">Q Zone</h2>
         <img className='w-full mb-8' src={qzone1} alt="" />
         <img className='w-full mb-8' src={qzone2} alt="" />

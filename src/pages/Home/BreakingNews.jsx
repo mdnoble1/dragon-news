@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const BreakingNews = () => {
   return (
-    <div className="bg-gray-200 py-4 px-4 flex items-center">
+    <div className="container mx-auto bg-gray-200 py-4 px-4 flex items-center">
       <button className="bg-[#D72050] px-6 py-2 font-medium text-xl text-white mr-4">
         Latest
       </button>
