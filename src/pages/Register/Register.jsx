@@ -1,15 +1,34 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
 import Navbar from "../shared/Navbar/Navbar";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Register = () => {
 
-    const handleRegister = e => {
-        e.preventDefault();
-        console.log(e.currentTarget);
-        const form = new FormData(e.currentTarget);
-        console.log(form.get("password"));
-    }
+    const { createUser } = useContext(AuthContext);
 
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+
+
+    console.log(e.currentTarget);
+    const form = new FormData(e.currentTarget);
+
+    const name = form.get("name");
+    const photo = form.get("photo");
+    const email = form.get("email");
+    const password = form.get("password");
+
+    console.log(name , photo , email , password);
+
+    createUser( email , password)
+        .then( result => {
+            console.log(result.user);
+        })
+        .catch( error => {
+            console.error(error);
+        })
+  };
 
   return (
     <div className="bg-gray-100 max-h-fit pt-6 pb-16 lg:pt-12">
@@ -42,7 +61,7 @@ const Register = () => {
             </label>
             <input
               name="photo"
-              type="url"
+              type="text"
               placeholder="Give Your Photo URL"
               className="input input-bordered rounded-sm bg-gray-100"
               required
@@ -82,7 +101,7 @@ const Register = () => {
           </div>
           <div className="form-control mt-6">
             <button className="btn btn-primary rounded-sm font-semibold text-xl normal-case text-white bg-[#403F3F] hover:opacity-60 hover:bg-slate-800">
-              Login
+              Register
             </button>
           </div>
         </form>
